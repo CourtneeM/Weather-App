@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <header>
+      <img src="./img/weather-sunny.png" alt="logo" class="logo">
+      <form action="#">
+        <input type="text" placeholder="enter city or zip code">
+        <img src="./img/magnify.png" alt="search-icon">
+      </form>
+      <div class="hidden quick-links">
+        <ul>
+          <li><a href="#daily-weather">24 Hours</a></li>
+          <li><a href="#5-days-weather">5 Days</a></li>
+        </ul>
+      </div>
+      <img src="./img/cog.png" alt="settings-icon" class="settings-icon">
+    </header>
+
+    <main>
+      <section id="current-upcoming-weather">
+        <div class="current-weather">
+          <div class="time-location">
+            <p class="time">12:00<span>AM</span></p>
+            <p class="location">Houston, TX</p>
+          </div>
+
+          <div>
+            <div class="current-temp">
+              <img src="./img/weather-partly-cloudy-dark.png" alt="weather condition">
+              <h2><span>101</span>&deg;F</h2>
+            </div>
+            <div class="temp-details">
+              <p>Feels Like <span>100</span>&deg;F</p>
+              <p>H <span>101</span>&deg;F</p>
+              <p>L <span>72</span>&deg;F</p>
+            </div>
+            <div class="weather-conditions">
+              <ul>
+                <li>
+                  <img src="./img/weather-windy-dark.png" alt="wind icon">
+                  <p>NE 1 MPH</p>
+                </li>
+                <li>
+                  <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                  <p><span>5</span>%</p>
+                </li>
+                <li>
+                  <img src="./img/water-outline-dark.png" alt="humidity icon">
+                  <p><span>71</span>%</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="upcoming-weather">
+          <h2>Upcoming Weather</h2>
+          <div>
+            <div class="upcoming-container">
+              <div>
+                <img src="./img/weather-partly-cloudy-dark.png" alt="weather condition">
+                <p><span>98</span>&deg;F</p>
+              </div>
+              <div class="weather-conditions">
+                <ul>
+                  <li>
+                    <im./img/weather-windy-dark.pngg src="" alt="wind icon">
+                    <p>NE 1 MPH</p>
+                  </li>
+                  <li>
+                    <im./img/umbrella-outline-dark.pngg src="" alt="rain icon">
+                    <p><span>0</span>%</p>
+                  </li>
+                  <li>
+                    <img src="./img/water-outline-dark.png" alt="humidity icon">
+                    <p><span>80</span>%</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="time">
+                <p>1:00<span>AM</span></p>
+              </div>
+            </div>
+
+            <div class="upcoming-container">
+              <div>
+                <img src="./img/weather-partly-cloudy-dark.png" alt="weather condition">
+                <p><span>98</span>&deg;F</p>
+              </div>
+              <div class="weather-conditions">
+                <ul>
+                  <li>
+                    <img src="./img/weather-windy-dark.png" alt="wind icon">
+                    <p>NE 1 MPH</p>
+                  </li>
+                  <li>
+                    <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                    <p><span>0</span>%</p>
+                  </li>
+                  <li>
+                    <img src="./img/water-outline-dark.png" alt="humidity icon">
+                    <p><span>80</span>%</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="time">
+                <p>2:00<span>AM</span></p>
+              </div>
+            </div>
+
+            <div class="upcoming-container">
+              <div>
+                <img src="./img/weather-partly-cloudy-dark.png" alt="weather condition">
+                <p><span>98</span>&deg;F</p>
+              </div>
+              <div class="weather-conditions">
+                <ul>
+                  <li>
+                    <img src="./img/weather-windy-dark.png" alt="wind icon">
+                    <p>NE 1 MPH</p>
+                  </li>
+                  <li>
+                    <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                    <p><span>0</span>%</p>
+                  </li>
+                  <li>
+                    <img src="./img/water-outline-dark.png" alt="humidity icon">
+                    <p><span>80</span>%</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="time">
+                <p>3:00<span>AM</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="daily-weather">
+        <div class="current-stats">
+          <div class="current-temp">
+            <p>Current Temp</p>
+            <p><span>98</span>&deg;F</p>
+          </div>
+          <div class="time-location">
+            <p class="time">12:00<span>AM</span></p>
+            <p class="location">Houston, TX</p>
+          </div>
+        </div>
+
+        <div class="daily-weather">
+          <h2>Next 24 Hours</h2>
+          <div class="hourly-weather-container">
+            <div class="hourly-weather">
+              <p>12:00<span>AM</span></p>
+              <p><span>98</span>&deg;F</p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="hourly-weather">
+              <p>1:00<span>AM</span></p>
+              <p><span>98</span>&deg;F</p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="hourly-weather">
+              <p>2:00<span>AM</span></p>
+              <p><span>98</span>&deg;F</p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="5-days-weather">
+        <div class="current-stats">
+          <div class="current-temp">
+            <p>Current Temp</p>
+            <p><span>98</span>&deg;F</p>
+          </div>
+          <div class="time-location">
+            <p class="time">12:00<span>AM</span></p>
+            <p class="location">Houston, TX</p>
+          </div>
+        </div>
+
+        <div class="5-days-weather">
+          <h2>Next 5 Days</h2>
+          <div class="5-days-weather-container">
+            <div class="day-weather">
+              <p>Mon</p>
+              <p>
+                <span class="low">82</span>&deg;F / <span class="high">98</span>&deg;F
+              </p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="day-weather">
+              <p>Tue</p>
+              <p>
+                <span class="low">82</span>&deg;F / <span class="high">98</span>&deg;F
+              </p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="day-weather">
+              <p>Wed</p>
+              <p>
+                <span class="low">82</span>&deg;F / <span class="high">98</span>&deg;F
+              </p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="day-weather">
+              <p>Thu</p>
+              <p>
+                <span class="low">82</span>&deg;F / <span class="high">98</span>&deg;F
+              </p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+
+            <div class="day-weather">
+              <p>Fri</p>
+              <p>
+                <span class="low">82</span>&deg;F / <span class="high">98</span>&deg;F
+              </p>
+              <p>
+                <img src="./img/umbrella-outline-dark.png" alt="rain icon">
+                <span>3</span>%
+              </p>
+              <p>
+                <img src="./img/weather-windy-dark.png" alt="wind icon">
+                <span>NE 1</span> MPH
+              </p>
+              <p><img src="./img/weather-partly-cloudy-dark.png" alt="weather condition"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div id="active-tab">
+        <img src="./img/weather-sunny.png" alt="sun icon">
+        <p>Current</p>
+      </div>
+      <div>
+        <img src="./img/hours-24.png" alt="24 hours icon">
+        <p>Daily</p>
+      </div>
+      <div>
+        <img src="./img/calendar-multiselect.png" alt="calendar icon">
+        <p>5 Days</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

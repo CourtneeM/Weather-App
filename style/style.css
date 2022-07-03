@@ -1,0 +1,58 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Suwannaphum", serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 0px) {
+  header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #1379D7;
+  }
+  header .logo {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+  header form {
+    position: relative;
+    margin-right: 22px;
+  }
+  header form input {
+    max-width: 210px;
+    padding: 1px 8px;
+    font-size: 0.9rem;
+    font-family: "Suwannaphum", serif;
+    border: none;
+    border-radius: 3px;
+  }
+  header form img {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+  }
+  header .settings-icon {
+    margin-left: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
