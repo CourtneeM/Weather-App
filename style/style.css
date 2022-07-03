@@ -25,6 +25,9 @@ a {
   header {
     padding: 15px 5vw;
     background-color: #1379D7;
+    -webkit-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
   }
   header > div {
     display: flex;
@@ -190,9 +193,13 @@ a {
     height: 20px;
   }
   #current-upcoming-weather .upcoming-weather {
-    padding: 8px 14px;
-    box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    max-width: 593px;
+    margin: 0 auto;
+    padding: 8px 10px;
     border-radius: 8px;
+    -webkit-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
   }
   #current-upcoming-weather .upcoming-weather h2 {
     margin-bottom: 10px;
@@ -205,17 +212,20 @@ a {
     justify-content: space-around;
     text-align: center;
   }
+  #current-upcoming-weather .upcoming-weather .upcoming-container {
+    flex-basis: 33.3%;
+  }
   #current-upcoming-weather .upcoming-weather .upcoming-container:first-child {
-    padding-right: 14px;
+    padding-right: 10px;
   }
   #current-upcoming-weather .upcoming-weather .upcoming-container:nth-child(2) {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-left: 1px solid #BABABA;
     border-right: 1px solid #BABABA;
   }
   #current-upcoming-weather .upcoming-weather .upcoming-container:last-child {
-    padding-left: 14px;
+    padding-left: 10px;
   }
   #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child {
     position: relative;
@@ -234,6 +244,7 @@ a {
   }
   #current-upcoming-weather .upcoming-weather .upcoming-container li {
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 0.6rem;
   }
@@ -251,17 +262,86 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #current-upcoming-weather {
-    max-width: 1000px;
-    padding: 40px 75px;
+    padding: 25px 75px;
   }
-  #current-upcoming-weather .current-weather > .time-location {
+  #current-upcoming-weather .current-weather {
+    margin-bottom: 60px;
+  }
+  #current-upcoming-weather .current-weather .time-location {
     font-size: 2rem;
   }
-  #current-upcoming-weather .current-weather > .time-location p:first-child {
+  #current-upcoming-weather .current-weather .time-location p:first-child {
     margin-bottom: -15px;
   }
-  #current-upcoming-weather .current-weather > .time-location span {
+  #current-upcoming-weather .current-weather .time-location span {
     font-size: 1rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp img {
+    top: -20px;
+    left: -110px;
+    width: 112px;
+    height: 112px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp h2 {
+    font-size: 1.6rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp h2 span {
+    font-size: 7rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+    margin-bottom: 10px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+    margin-right: 50px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions {
+    max-width: 275px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul {
+    font-size: 1rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li img {
+    width: 28px;
+    height: 28px;
+  }
+  #current-upcoming-weather .upcoming-weather {
+    max-width: 800px;
+    padding: 25px 10px;
+  }
+  #current-upcoming-weather .upcoming-weather h2 {
+    margin-bottom: 36px;
+    font-size: 1.5rem;
+  }
+  #current-upcoming-weather .upcoming-weather > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child img {
+    left: -35px;
+    width: 36px;
+    height: 36px;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child p {
+    font-size: 2.5rem;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container li {
+    font-size: 1rem;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container li img {
+    width: 20px;
+    height: 20px;
+  }
+  #current-upcoming-weather .upcoming-weather .time p {
+    font-size: 0.8rem;
+  }
+  #current-upcoming-weather .upcoming-weather .time p span {
+    font-size: 1.5rem;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -269,13 +349,39 @@ a {
     display: flex;
     justify-content: center;
     max-width: clamp(1000px, 63.5vw, 1440px);
-    margin: 0 auto;
+    margin: 120px auto;
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    -webkit-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
   }
   #current-upcoming-weather .current-weather {
     flex: 1 1 50%;
+    margin: 0;
+    padding: 25px 35px 0 85px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp {
+    margin-bottom: 10px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details {
+    margin-bottom: 75px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+    margin-bottom: 15px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+    margin-right: 65px;
   }
   #current-upcoming-weather .upcoming-weather {
     flex: 1 1 50%;
+    padding: 30px 70px;
+    color: #fff;
+    background-color: #1379D7;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
   }
   #current-upcoming-weather .upcoming-weather h2 {
     text-align: center;
@@ -283,18 +389,39 @@ a {
   #current-upcoming-weather .upcoming-weather > div {
     flex-direction: column;
   }
-  #current-upcoming-weather .upcoming-weather > div div {
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container {
+    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
-  #current-upcoming-weather .upcoming-weather > div div ul, #current-upcoming-weather .upcoming-weather > div div li {
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container:first-child {
+    padding: 0 0 30px;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container:nth-child(2) {
+    padding: 30px 0;
+    border: none;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container:last-child {
+    padding: 30px 0 0;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container div:first-child img {
+    left: -35px;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container ul {
+    display: flex;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container ul li {
     display: flex;
     align-items: center;
+    margin-right: 10px;
   }
-  #current-upcoming-weather .upcoming-weather > div div .time {
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container .time {
     flex: 1 1 100%;
+    justify-content: center;
   }
 }
 @media only screen and (min-width: 0px) {
@@ -329,6 +456,21 @@ a {
   }
   footer #active-tab {
     border-bottom: 2px solid #fff;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    padding: 10px 0 6px;
+    font-size: 1rem;
+  }
+  footer img {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer {
+    display: none;
   }
 }
 

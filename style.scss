@@ -1,6 +1,12 @@
 $primary: #1379D7;
 $gray: #BABABA;
 
+@mixin box-shadow-default() {
+  -webkit-box-shadow: 0 1px 12px -4px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 12px -4px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 12px -4px rgba(0,0,0,0.25);
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -23,6 +29,7 @@ a {
   header {
     padding: 15px 5vw;
     background-color: $primary;
+    @include box-shadow-default();
     
     > div {
       display: flex;
@@ -223,9 +230,11 @@ a {
     }
 
     .upcoming-weather {
-      padding: 8px 14px;
-      box-shadow: 0 1px 12px -4px rgba(0,0,0,0.25);
+      max-width: 593px;
+      margin: 0 auto;
+      padding: 8px 10px;
       border-radius: 8px;
+      @include box-shadow-default();
 
       h2 {
         margin-bottom: 10px;
@@ -241,15 +250,17 @@ a {
       }
 
       .upcoming-container {
-        &:first-child { padding-right: 14px; }
+        flex-basis: 33.3%;
+
+        &:first-child { padding-right: 10px; }
         &:nth-child(2) {
-          padding-left: 14px;
-          padding-right: 14px;
+          padding-left: 10px;
+          padding-right: 10px;
           border-left: 1px solid $gray;
           border-right: 1px solid $gray;
         }
         &:last-child {
-          padding-left: 14px;
+          padding-left: 10px;
         }
 
         div:first-child {
@@ -270,9 +281,10 @@ a {
 
         li {
           display: flex;
+          justify-content: center;
           align-items: center;
           font-size: 0.6rem;
-
+        
           img {
             width: 16px;
             height: 16px;
@@ -293,14 +305,102 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #current-upcoming-weather {
-    max-width: 1000px;
-    padding: 40px 75px;
+    padding: 25px 75px;
 
-    .current-weather > .time-location {
-      font-size: 2rem;
+    .current-weather {
+      margin-bottom: 60px;
 
-      p:first-child { margin-bottom: -15px; }
-      span { font-size: 1rem; }
+      .time-location {
+        font-size: 2rem;
+        
+        p:first-child { margin-bottom: -15px; }
+        span { font-size: 1rem; }
+      }
+    } 
+
+    > div:nth-child(1) {
+      .current-temp {
+        img {
+          top: -20px;
+          left: -110px;
+          width: 112px;
+          height: 112px;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+          span { font-size: 7rem; }
+        }
+      }
+
+      .temp-details {
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+
+        p:first-child { margin-bottom: 10px; }
+        p:nth-child(2) { margin-right: 50px; }
+      }
+
+      .weather-conditions {
+        max-width: 275px;
+
+        ul {
+          font-size: 1rem;
+          
+          li {
+            img {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        }
+      }
+    }
+
+    .upcoming-weather {
+      max-width: 800px;
+      padding: 25px 10px;
+
+      h2 {
+        margin-bottom: 36px;
+        font-size: 1.5rem;
+      }
+
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .upcoming-container {
+        div:first-child {
+          img {
+            left: -35px;
+            width: 36px;
+            height: 36px;
+          }
+
+          p { font-size: 2.5rem; }
+        }
+
+        li {
+          font-size: 1rem;
+        
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .time {
+        p {
+          font-size: 0.8rem;
+
+          span { font-size: 1.5rem; }
+        }
+      }
     }
   }
 }
@@ -309,48 +409,79 @@ a {
     display: flex;
     justify-content: center;
     max-width: clamp(1000px, 63.5vw, 1440px);
-    margin: 0 auto;
+    margin: 120px auto;
+    padding: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    @include box-shadow-default();
 
     .current-weather {
       flex: 1 1 50%;
-      .time-location {
-        // font-size: 2rem;
+      margin: 0;
+      padding: 25px 35px 0 85px;
+    }
 
-        // p:first-child { margin-bottom: -15px; }
-        // span { font-size: 1rem; }
+    > div:nth-child(1) {
+      .current-temp { margin-bottom: 10px; }
+
+      .temp-details {
+        margin-bottom: 75px;
+
+        p:first-child { margin-bottom: 15px; }
+        p:nth-child(2) { margin-right: 65px; }
       }
     }
 
     .upcoming-weather {
       flex: 1 1 50%;
+      padding: 30px 70px;
+      color: #fff;
+      background-color: $primary;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      box-shadow: none;
 
       h2 { text-align: center; }
 
       > div {
         flex-direction: column;
 
-        div {
+        .upcoming-container {
+          flex-basis: 100%;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
           align-items: center;
 
-          ul, li {
+          &:first-child { padding: 0 0 30px; }
+          &:nth-child(2) {
+            padding: 30px 0;
+            border: none;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+          }
+          &:last-child { padding: 30px 0 0; }
+
+          div:first-child {
+            img { left: -35px; }
+          }
+
+          ul {
             display: flex;
-            align-items: center;
+            li {
+              display: flex;
+              align-items: center;
+              margin-right: 10px;
+            }
           }
 
           .time {
             flex: 1 1 100%;
+            justify-content: center;
           }
         }
       }
     }
-  }
-}
-@media only screen and (min-width: 1440px) {
-  #current-upcoming-weather {
-
   }
 }
 
@@ -420,11 +551,18 @@ a {
   }
 }
 @media only screen and (min-width: 768px) {
+  footer {
+    padding: 10px 0 6px;
+    font-size: 1rem;
 
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  }
 }
 @media only screen and (min-width: 1024px) {
-
-}
-@media only screen and (min-width: 1440px) {
-
+  footer {
+    display: none;
+  }
 }
