@@ -117,5 +117,219 @@ a {
     max-width: clamp(1000px, 63.5vw, 1440px);
   }
 }
+@media only screen and (min-width: 0px) {
+  #current-upcoming-weather {
+    padding: 20px 14px 60px;
+  }
+  #current-upcoming-weather .current-weather {
+    margin-bottom: 20px;
+  }
+  #current-upcoming-weather .current-weather .time-location {
+    width: fit-content;
+    margin-left: auto;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+  #current-upcoming-weather .current-weather .time-location p:first-child {
+    margin-bottom: -10px;
+  }
+  #current-upcoming-weather .current-weather .time-location span {
+    font-size: 0.75rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) {
+    width: 100%;
+    text-align: center;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp {
+    position: relative;
+    width: fit-content;
+    margin: -15px auto 0;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp img {
+    position: absolute;
+    top: -18px;
+    left: -70px;
+    width: 76px;
+    height: 76px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp h2 {
+    font-size: 0.8rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .current-temp h2 span {
+    font-size: 4.5rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+    flex: 1 1 100%;
+  }
+  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+    margin-right: 20px;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions {
+    max-width: 200px;
+    margin: -10px auto 0;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li {
+    flex-basis: 33.3333333333%;
+  }
+  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li img {
+    margin-bottom: -12px;
+    width: 20px;
+    height: 20px;
+  }
+  #current-upcoming-weather .upcoming-weather {
+    padding: 8px 14px;
+    box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+  #current-upcoming-weather .upcoming-weather h2 {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  #current-upcoming-weather .upcoming-weather > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container:first-child {
+    padding-right: 14px;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container:nth-child(2) {
+    padding-left: 14px;
+    padding-right: 14px;
+    border-left: 1px solid #BABABA;
+    border-right: 1px solid #BABABA;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container:last-child {
+    padding-left: 14px;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child img {
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container div:first-child p {
+    font-size: 1.2rem;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container li {
+    display: flex;
+    align-items: center;
+    font-size: 0.6rem;
+  }
+  #current-upcoming-weather .upcoming-weather .upcoming-container li img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+  #current-upcoming-weather .upcoming-weather .time p {
+    font-size: 0.6rem;
+  }
+  #current-upcoming-weather .upcoming-weather .time p span {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #current-upcoming-weather {
+    max-width: 1000px;
+    padding: 40px 75px;
+  }
+  #current-upcoming-weather .current-weather > .time-location {
+    font-size: 2rem;
+  }
+  #current-upcoming-weather .current-weather > .time-location p:first-child {
+    margin-bottom: -15px;
+  }
+  #current-upcoming-weather .current-weather > .time-location span {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #current-upcoming-weather {
+    display: flex;
+    justify-content: center;
+    max-width: clamp(1000px, 63.5vw, 1440px);
+    margin: 0 auto;
+  }
+  #current-upcoming-weather .current-weather {
+    flex: 1 1 50%;
+  }
+  #current-upcoming-weather .upcoming-weather {
+    flex: 1 1 50%;
+  }
+  #current-upcoming-weather .upcoming-weather h2 {
+    text-align: center;
+  }
+  #current-upcoming-weather .upcoming-weather > div {
+    flex-direction: column;
+  }
+  #current-upcoming-weather .upcoming-weather > div div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #current-upcoming-weather .upcoming-weather > div div ul, #current-upcoming-weather .upcoming-weather > div div li {
+    display: flex;
+    align-items: center;
+  }
+  #current-upcoming-weather .upcoming-weather > div div .time {
+    flex: 1 1 100%;
+  }
+}
+@media only screen and (min-width: 0px) {
+  #daily-weather {
+    display: none;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 0px) {
+  #next-5-days-weather {
+    display: none;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 0px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 6px 0 3px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #fff;
+    background-color: #1379D7;
+  }
+  footer img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: -8px;
+  }
+  footer #active-tab {
+    border-bottom: 2px solid #fff;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

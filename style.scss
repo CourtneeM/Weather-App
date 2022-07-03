@@ -63,7 +63,6 @@ a {
     }
   }
 }
-
 @media only screen and (min-width: 768px) {
   header {
     padding: 22px 6vw;
@@ -87,7 +86,6 @@ a {
     }
   }
 }
-
 @media only screen and (min-width: 1024px) {
   header {
     padding-left: 0;
@@ -131,7 +129,6 @@ a {
     }
   }
 }
-
 @media only screen and (min-width: 1440px) {
   header {
     > div {
@@ -143,3 +140,291 @@ a {
 //*************
 //    MAIN
 //*************
+
+//************************************
+//     CURRENT / UPCOMING WEATHER
+//************************************
+
+@media only screen and (min-width: 0px) {
+  #current-upcoming-weather {
+    padding: 20px 14px 60px;
+
+    .current-weather {
+      margin-bottom: 20px;
+
+      .time-location {
+        width: fit-content;
+        margin-left: auto;
+        font-size: 1.2rem;
+        text-align: right;
+        
+        p:first-child { margin-bottom: -10px; }
+        span { font-size: 0.75rem; }
+      }
+    }
+    
+    > div:nth-child(1) {
+      width: 100%;
+      text-align: center;
+
+      .current-temp {
+        position: relative;
+        width:fit-content;
+        margin: -15px auto 0;
+
+        img {
+          position: absolute;
+          top: -18px;
+          left: -70px;
+          width: 76px;
+          height: 76px;
+        }
+
+        h2 {
+          font-size: 0.8rem;
+
+          span { font-size: 4.5rem; }
+        }
+      }
+
+      .temp-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -30px;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
+
+        p:first-child { flex: 1 1 100%; }
+        p:nth-child(2) { margin-right: 20px; }
+      }
+
+      .weather-conditions {
+        max-width: 200px;
+        margin: -10px auto 0;
+
+        ul {
+          display: flex;
+          justify-content: center;
+          
+          font-size: 0.8rem;
+          
+          li {
+            flex-basis: calc(100% / 3);
+            
+            img {
+              margin-bottom: -12px;
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      } 
+    }
+
+    .upcoming-weather {
+      padding: 8px 14px;
+      box-shadow: 0 1px 12px -4px rgba(0,0,0,0.25);
+      border-radius: 8px;
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .upcoming-container {
+        &:first-child { padding-right: 14px; }
+        &:nth-child(2) {
+          padding-left: 14px;
+          padding-right: 14px;
+          border-left: 1px solid $gray;
+          border-right: 1px solid $gray;
+        }
+        &:last-child {
+          padding-left: 14px;
+        }
+
+        div:first-child {
+          position: relative;
+          width:fit-content;
+          margin: 0 auto;
+
+          img {
+            position: absolute;
+            top: -5px;
+            left: -20px;
+            width: 20px;
+            height: 20px;
+          }
+
+          p { font-size: 1.2rem; }
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          font-size: 0.6rem;
+
+          img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      .time {
+        p {
+          font-size: 0.6rem;
+
+          span { font-size: 1rem; }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  #current-upcoming-weather {
+    max-width: 1000px;
+    padding: 40px 75px;
+
+    .current-weather > .time-location {
+      font-size: 2rem;
+
+      p:first-child { margin-bottom: -15px; }
+      span { font-size: 1rem; }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #current-upcoming-weather {
+    display: flex;
+    justify-content: center;
+    max-width: clamp(1000px, 63.5vw, 1440px);
+    margin: 0 auto;
+
+    .current-weather {
+      flex: 1 1 50%;
+      .time-location {
+        // font-size: 2rem;
+
+        // p:first-child { margin-bottom: -15px; }
+        // span { font-size: 1rem; }
+      }
+    }
+
+    .upcoming-weather {
+      flex: 1 1 50%;
+
+      h2 { text-align: center; }
+
+      > div {
+        flex-direction: column;
+
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+
+          ul, li {
+            display: flex;
+            align-items: center;
+          }
+
+          .time {
+            flex: 1 1 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1440px) {
+  #current-upcoming-weather {
+
+  }
+}
+
+// *********************
+//     DAILY WEATHER
+// *********************
+@media only screen and (min-width: 0px) {
+  #daily-weather {
+    display: none;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 1024px) {
+
+}
+@media only screen and (min-width: 1440px) {
+}
+
+// *********************
+//     5 DAY WEATHER
+// *********************
+@media only screen and (min-width: 0px) {
+  #next-5-days-weather {
+    display: none;
+    padding-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 1024px) {
+
+}
+@media only screen and (min-width: 1440px) {
+
+}
+
+//*************
+//   FOOTER
+//*************
+
+@media only screen and (min-width: 0px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 6px 0 3px;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #fff;
+    background-color: $primary;
+
+    img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: -8px;
+    }
+
+    #active-tab {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 1024px) {
+
+}
+@media only screen and (min-width: 1440px) {
+
+}
