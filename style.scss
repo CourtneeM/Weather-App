@@ -13,14 +13,14 @@ a { text-decoration: none; }
 
 .hidden { display: none; }
 
+//*************
+//   HEADER
+//*************
 @media only screen and (min-width: 0px) {
-  //*************
-  //   HEADER
-  //*************
   header {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 15px 5vw;
     background-color: $primary;
 
     .logo {
@@ -54,8 +54,31 @@ a { text-decoration: none; }
       margin-left: auto;
     }
   }
-
-  //*************
-  //    MAIN
-  //*************
 }
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding: 22px 6vw;
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      margin-right: 20px;
+    }
+
+    form {
+      input {
+        max-width: 250px;
+        font-size: 1rem;
+      }
+    }
+
+    .settings-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+//*************
+//    MAIN
+//*************

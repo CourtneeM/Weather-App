@@ -24,7 +24,7 @@ a {
   header {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 15px 5vw;
     background-color: #1379D7;
   }
   header .logo {
@@ -52,6 +52,24 @@ a {
   }
   header .settings-icon {
     margin-left: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header {
+    padding: 22px 6vw;
+  }
+  header .logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 20px;
+  }
+  header form input {
+    max-width: 250px;
+    font-size: 1rem;
+  }
+  header .settings-icon {
+    width: 28px;
+    height: 28px;
   }
 }
 
