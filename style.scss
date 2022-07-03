@@ -9,7 +9,10 @@ $gray: #BABABA;
 
 body { font-family: 'Suwannaphum', serif; }
 li { list-style: none; }
-a { text-decoration: none; }
+a {
+  color: #fff;
+  text-decoration: none;
+}
 
 .hidden { display: none; }
 
@@ -18,10 +21,13 @@ a { text-decoration: none; }
 //*************
 @media only screen and (min-width: 0px) {
   header {
-    display: flex;
-    align-items: center;
     padding: 15px 5vw;
     background-color: $primary;
+    
+    > div {
+      display: flex;
+      align-items: center;
+    }
 
     .logo {
       width: 28px;
@@ -49,6 +55,8 @@ a { text-decoration: none; }
         transform: translateY(-50%);
       }
     }
+
+    .quick-links { display: none; }
 
     .settings-icon {
       margin-left: auto;
@@ -79,6 +87,59 @@ a { text-decoration: none; }
     }
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  header {
+    padding-left: 0;
+    padding-right: 0;
+
+    > div {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+
+    form {
+      input {
+        max-width: 350px;
+        padding: 5px 12px;
+        font-size: 1.2rem;
+      }
+    }
+
+    .quick-links {
+      display: block;
+      margin-left: auto;
+      font-size: 1.4rem;
+      
+      ul {
+        display: flex;
+        
+        li {
+          margin-right: 65px;
+        }
+      }
+    }
+
+    .settings-icon {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  header {
+    > div {
+      max-width: clamp(1000px, 63.5vw, 1440px);
+    }
+  }
+}
+
 //*************
 //    MAIN
 //*************

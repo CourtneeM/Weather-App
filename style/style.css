@@ -13,6 +13,7 @@ li {
 }
 
 a {
+  color: #fff;
   text-decoration: none;
 }
 
@@ -22,10 +23,12 @@ a {
 
 @media only screen and (min-width: 0px) {
   header {
-    display: flex;
-    align-items: center;
     padding: 15px 5vw;
     background-color: #1379D7;
+  }
+  header > div {
+    display: flex;
+    align-items: center;
   }
   header .logo {
     width: 28px;
@@ -50,6 +53,9 @@ a {
     right: 6px;
     transform: translateY(-50%);
   }
+  header .quick-links {
+    display: none;
+  }
   header .settings-icon {
     margin-left: auto;
   }
@@ -70,6 +76,45 @@ a {
   header .settings-icon {
     width: 28px;
     height: 28px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  header > div {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  header .logo {
+    width: 48px;
+    height: 48px;
+  }
+  header form input {
+    max-width: 350px;
+    padding: 5px 12px;
+    font-size: 1.2rem;
+  }
+  header .quick-links {
+    display: block;
+    margin-left: auto;
+    font-size: 1.4rem;
+  }
+  header .quick-links ul {
+    display: flex;
+  }
+  header .quick-links ul li {
+    margin-right: 65px;
+  }
+  header .settings-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header > div {
+    max-width: clamp(1000px, 63.5vw, 1440px);
   }
 }
 
