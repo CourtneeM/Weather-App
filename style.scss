@@ -145,7 +145,7 @@ a {
 
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
-    display: none;
+    // display: none;
     padding: 20px 14px 60px;
 
     .current-weather {
@@ -518,13 +518,27 @@ a {
               display: flex;
               align-items: center;
 
-              img { margin-right: 5px; }
+              
+              &:first-child { flex: 1 1 12.5%; }
+              &:nth-child(2) {
+                flex: 1 1 25%;
+                justify-content: center;
+              }
+              &:nth-child(3) { flex: 1 1 18.5%; }
+              &:nth-child(4) { flex: 1 1 40%; }
+              &:last-child { flex: 1 1 5%; }
+
+              img {
+                margin-right: 5px;
+                width: clamp(16px, 3.6vw, 24px);
+                height: clamp(16px, 3.6vw, 24px);
+              }
             }
           }
 
-          img {
-            width: clamp(16px, 3.6vw, 24px);
-            height: clamp(16px, 3.6vw, 24px);
+          img:last-child {
+            width: clamp(20px, 4.6vw, 28px);
+            height: clamp(20px, 4.6vw, 28px);              
           }
 
           .am-pm { font-size: clamp(0.6rem, 2.2vw, 0.8rem); }
@@ -592,7 +606,7 @@ a {
 // *********************
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
-    // display: none;
+    display: none;
     padding: 20px 30px 60px;
 
     .current-stats {
@@ -643,13 +657,29 @@ a {
               display: flex;
               align-items: center;
 
-              img { margin-right: 5px; }
+              &:first-child { flex: 1 1 12.5%; }
+              &:nth-child(2) {
+                flex: 1 1 25%;
+                justify-content: center;
+              }
+              &:nth-child(3) {
+                flex: 1 1 18.5%;
+                justify-content: center;
+              }
+              &:nth-child(4) { flex: 1 1 40%; }
+              &:last-child { flex: 1 1 5%; }
+
+              img {
+                margin-right: 2px;
+                width: clamp(16px, 3.6vw, 24px);
+                height: clamp(16px, 3.6vw, 24px);
+              }
             }
           }
 
-          img {
-            width: clamp(16px, 3.6vw, 24px);
-            height: clamp(16px, 3.6vw, 24px);
+          img:last-child {
+            width: clamp(20px, 4.6vw, 28px);
+            height: clamp(20px, 4.6vw, 28px);
           }
         }
       }

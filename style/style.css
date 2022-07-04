@@ -115,7 +115,6 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
-    display: none;
     padding: 20px 14px 60px;
   }
   #current-upcoming-weather .current-weather {
@@ -465,12 +464,30 @@ a {
     display: flex;
     align-items: center;
   }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li:first-child {
+    flex: 1 1 12.5%;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li:nth-child(2) {
+    flex: 1 1 25%;
+    justify-content: center;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li:nth-child(3) {
+    flex: 1 1 18.5%;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li:nth-child(4) {
+    flex: 1 1 40%;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li:last-child {
+    flex: 1 1 5%;
+  }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li img {
     margin-right: 5px;
-  }
-  #daily-weather .daily-weather .hourly-weather-container .hourly-weather img {
     width: clamp(16px, 3.6vw, 24px);
     height: clamp(16px, 3.6vw, 24px);
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather img:last-child {
+    width: clamp(20px, 4.6vw, 28px);
+    height: clamp(20px, 4.6vw, 28px);
   }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather .am-pm {
     font-size: clamp(0.6rem, 2.2vw, 0.8rem);
@@ -527,6 +544,7 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
+    display: none;
     padding: 20px 30px 60px;
   }
   #next-5-days-weather .current-stats {
@@ -574,12 +592,31 @@ a {
     display: flex;
     align-items: center;
   }
-  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li img {
-    margin-right: 5px;
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li:first-child {
+    flex: 1 1 12.5%;
   }
-  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img {
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li:nth-child(2) {
+    flex: 1 1 25%;
+    justify-content: center;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li:nth-child(3) {
+    flex: 1 1 18.5%;
+    justify-content: center;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li:nth-child(4) {
+    flex: 1 1 40%;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li:last-child {
+    flex: 1 1 5%;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li img {
+    margin-right: 2px;
     width: clamp(16px, 3.6vw, 24px);
     height: clamp(16px, 3.6vw, 24px);
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img:last-child {
+    width: clamp(20px, 4.6vw, 28px);
+    height: clamp(20px, 4.6vw, 28px);
   }
 }
 @media only screen and (min-width: 768px) {
