@@ -428,7 +428,6 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #daily-weather {
-    display: none;
     padding: 20px 30px 60px;
   }
   #daily-weather .current-stats {
@@ -460,11 +459,11 @@ a {
     font-size: 1rem;
     font-weight: 400;
   }
+  #daily-weather .daily-weather .hourly-weather-container .split-daily:last-child > .hourly-weather:last-child {
+    border-bottom: none;
+  }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather {
     border-bottom: 1px solid #BABABA;
-  }
-  #daily-weather .daily-weather .hourly-weather-container .hourly-weather:last-child {
-    border-bottom: none;
   }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul {
     display: flex;
@@ -536,9 +535,25 @@ a {
   #daily-weather .daily-weather {
     max-width: clamp(1000px, 99vw, 1440px);
   }
+  #daily-weather .daily-weather .hourly-weather-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 100%;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .split-daily {
+    width: 50%;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .split-daily .hourly-weather {
+    border-bottom: 1px solid #BABABA;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .split-daily .hourly-weather:last-child {
+    border-bottom: none;
+  }
 }
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
+    display: none;
     padding: 20px 30px 60px;
   }
   #next-5-days-weather .current-stats {
