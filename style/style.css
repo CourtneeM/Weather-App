@@ -139,29 +139,30 @@ a {
   #current-upcoming-weather .current-weather .time-location span {
     font-size: 0.75rem;
   }
-  #current-upcoming-weather > div:nth-child(1) {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) {
     width: 100%;
+    margin-top: 8vh;
     text-align: center;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp {
     position: relative;
     width: fit-content;
     margin: -15px auto 0;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp img {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp img {
     position: absolute;
     top: -18px;
     left: -70px;
     width: 76px;
     height: 76px;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp h2 {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 {
     font-size: 0.8rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp h2 span {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 span {
     font-size: 4.5rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -169,32 +170,32 @@ a {
     margin-bottom: 10px;
     font-size: 0.8rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:first-child {
     flex: 1 1 100%;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:nth-child(2) {
     margin-right: 20px;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions {
     max-width: 200px;
     margin: -10px auto 0;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul {
     display: flex;
     justify-content: center;
     font-size: 0.8rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li {
     flex-basis: 33.3333333333%;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li img {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li img {
     margin-bottom: -12px;
     width: 20px;
     height: 20px;
   }
   #current-upcoming-weather .upcoming-weather {
     max-width: 593px;
-    margin: 0 auto;
+    margin: 10vh auto 0;
     padding: 8px 10px;
     border-radius: 8px;
     -webkit-box-shadow: 0 1px 12px -4px rgba(0, 0, 0, 0.25);
@@ -263,7 +264,7 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #current-upcoming-weather {
-    padding: 25px 75px;
+    padding: 25px 75px 100px;
   }
   #current-upcoming-weather .current-weather {
     margin-bottom: 60px;
@@ -277,40 +278,44 @@ a {
   #current-upcoming-weather .current-weather .time-location span {
     font-size: 1rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp img {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) {
+    margin-top: 0;
+  }
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp img {
     top: -20px;
     left: -110px;
     width: 112px;
     height: 112px;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp h2 {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 {
     font-size: 1.6rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp h2 span {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 span {
     font-size: 7rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
     margin-bottom: 40px;
     font-size: 1.2rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:first-child {
     margin-bottom: 10px;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:nth-child(2) {
     margin-right: 50px;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions {
     max-width: 275px;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul {
     font-size: 1rem;
   }
-  #current-upcoming-weather > div:nth-child(1) .weather-conditions ul li img {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li img {
     width: 28px;
     height: 28px;
   }
   #current-upcoming-weather .upcoming-weather {
     max-width: 800px;
+    margin-top: 0;
     padding: 25px 10px;
   }
   #current-upcoming-weather .upcoming-weather h2 {
@@ -363,20 +368,21 @@ a {
     margin: 0;
     padding: 25px 35px 0 85px;
   }
-  #current-upcoming-weather > div:nth-child(1) .current-temp {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp {
     margin-bottom: 10px;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
     margin-bottom: 75px;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:first-child {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:first-child {
     margin-bottom: 15px;
   }
-  #current-upcoming-weather > div:nth-child(1) .temp-details p:nth-child(2) {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:nth-child(2) {
     margin-right: 65px;
   }
   #current-upcoming-weather .upcoming-weather {
     flex: 1 1 50%;
+    margin-top: 0;
     padding: 30px 70px;
     color: #fff;
     background-color: #1379D7;

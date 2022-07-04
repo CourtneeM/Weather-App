@@ -171,8 +171,9 @@ a {
       }
     }
     
-    > div:nth-child(1) {
+    > div:first-child > div:nth-child(2) {
       width: 100%;
+      margin-top: 8vh;
       text-align: center;
 
       .current-temp {
@@ -232,7 +233,7 @@ a {
 
     .upcoming-weather {
       max-width: 593px;
-      margin: 0 auto;
+      margin: 10vh auto 0;
       padding: 8px 10px;
       border-radius: 8px;
       @include box-shadow-default();
@@ -307,7 +308,7 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #current-upcoming-weather {
-    padding: 25px 75px;
+    padding: 25px 75px 100px;
 
     .current-weather {
       margin-bottom: 60px;
@@ -320,7 +321,9 @@ a {
       }
     } 
 
-    > div:nth-child(1) {
+    > div:first-child > div:nth-child(2) {
+      margin-top: 0;
+
       .current-temp {
         img {
           top: -20px;
@@ -361,6 +364,7 @@ a {
 
     .upcoming-weather {
       max-width: 800px;
+      margin-top: 0;
       padding: 25px 10px;
 
       h2 {
@@ -423,7 +427,7 @@ a {
       padding: 25px 35px 0 85px;
     }
 
-    > div:nth-child(1) {
+    > div:first-child > div:nth-child(2) {
       .current-temp { margin-bottom: 10px; }
 
       .temp-details {
@@ -436,6 +440,7 @@ a {
 
     .upcoming-weather {
       flex: 1 1 50%;
+      margin-top: 0;
       padding: 30px 70px;
       color: #fff;
       background-color: $primary;
