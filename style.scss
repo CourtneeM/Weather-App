@@ -154,7 +154,7 @@ a {
 
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
-    display: none;
+    // display: none;
     padding: 20px 14px 60px;
 
     .current-weather {
@@ -410,7 +410,7 @@ a {
   #current-upcoming-weather {
     display: flex;
     justify-content: center;
-    max-width: clamp(1000px, 63.5vw, 1440px);
+    max-width: clamp(1000px, 90vw, 1440px);
     margin: 120px auto;
     padding: 0;
     border-top-left-radius: 8px;
@@ -492,7 +492,7 @@ a {
 // *********************
 @media only screen and (min-width: 0px) {
   #daily-weather {
-    // display: none;
+    display: none;
     padding: 20px 30px 60px;
 
     .current-stats {
@@ -761,7 +761,37 @@ a {
     padding-bottom: 0;
 
     .current-stats { display: none; }
-    .next-5-days-weather { max-width: clamp(1000px, 99vw, 1440px); }
+    .next-5-days-weather {
+      max-width: clamp(1000px, 99vw, 1440px);
+
+      h2 { margin-bottom: 37px; }
+
+      .next-5-days-weather-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 35px clamp(50px, 4vw,120px) 40px;
+        border-radius: 8px;
+        @include box-shadow-default();
+
+        .day-weather {
+          border-bottom: none;
+
+          ul {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+
+            li { margin-bottom: 8px; }
+
+            li:first-child {
+              order: -1;
+              margin-bottom: 15px;
+            }
+            li:last-child { order: -1; }
+          }
+        } 
+      }
+    }
   }
 }
 
