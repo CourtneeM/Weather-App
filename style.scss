@@ -67,6 +67,8 @@ a {
 
     .settings-icon {
       margin-left: auto;
+      width: 28px;
+      height: 28px;
     }
   }
 }
@@ -88,8 +90,8 @@ a {
     }
 
     .settings-icon {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
     }
   }
 }
@@ -303,6 +305,8 @@ a {
           span { font-size: 1rem; }
         }
       }
+
+      .light-icon { display: none; }
     }
   }
 }
@@ -441,7 +445,7 @@ a {
     .upcoming-weather {
       flex: 1 1 50%;
       margin-top: 0;
-      padding: 30px 70px;
+      padding: 50px 70px;
       color: #fff;
       background-color: $primary;
       border-top-left-radius: 0;
@@ -457,7 +461,7 @@ a {
           flex-basis: 100%;
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
 
           &:first-child { padding: 0 0 30px; }
@@ -470,15 +474,18 @@ a {
           &:last-child { padding: 30px 0 0; }
 
           div:first-child {
-            img { left: -35px; }
+            flex-basis: 30%;
+            img { left: -25px }
           }
 
           ul {
             display: flex;
+            flex-basis: 70%;
+
             li {
               display: flex;
               align-items: center;
-              margin-right: 10px;
+              margin-right: clamp(10px, 1.4vw, 40px);
             }
           }
 
@@ -486,6 +493,9 @@ a {
             flex: 1 1 100%;
             justify-content: center;
           }
+
+          .light-icon { display: inline-block; }
+          .dark-icon { display: none; }
         }
       }
     }

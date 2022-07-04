@@ -61,6 +61,8 @@ a {
   }
   header .settings-icon {
     margin-left: auto;
+    width: 28px;
+    height: 28px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -77,8 +79,8 @@ a {
     font-size: 1rem;
   }
   header .settings-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -261,6 +263,9 @@ a {
   #current-upcoming-weather .upcoming-weather .time p span {
     font-size: 1rem;
   }
+  #current-upcoming-weather .upcoming-weather .light-icon {
+    display: none;
+  }
 }
 @media only screen and (min-width: 768px) {
   #current-upcoming-weather {
@@ -383,7 +388,7 @@ a {
   #current-upcoming-weather .upcoming-weather {
     flex: 1 1 50%;
     margin-top: 0;
-    padding: 30px 70px;
+    padding: 50px 70px;
     color: #fff;
     background-color: #1379D7;
     border-top-left-radius: 0;
@@ -400,7 +405,7 @@ a {
     flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   #current-upcoming-weather .upcoming-weather > div .upcoming-container:first-child {
@@ -415,20 +420,30 @@ a {
   #current-upcoming-weather .upcoming-weather > div .upcoming-container:last-child {
     padding: 30px 0 0;
   }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container div:first-child {
+    flex-basis: 30%;
+  }
   #current-upcoming-weather .upcoming-weather > div .upcoming-container div:first-child img {
-    left: -35px;
+    left: -25px;
   }
   #current-upcoming-weather .upcoming-weather > div .upcoming-container ul {
     display: flex;
+    flex-basis: 70%;
   }
   #current-upcoming-weather .upcoming-weather > div .upcoming-container ul li {
     display: flex;
     align-items: center;
-    margin-right: 10px;
+    margin-right: clamp(10px, 1.4vw, 40px);
   }
   #current-upcoming-weather .upcoming-weather > div .upcoming-container .time {
     flex: 1 1 100%;
     justify-content: center;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container .light-icon {
+    display: inline-block;
+  }
+  #current-upcoming-weather .upcoming-weather > div .upcoming-container .dark-icon {
+    display: none;
   }
 }
 @media only screen and (min-width: 0px) {
