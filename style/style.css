@@ -34,8 +34,8 @@ a {
     align-items: center;
   }
   header .logo {
-    width: 28px;
-    height: 28px;
+    width: clamp(28px, 6vw, 36px);
+    height: clamp(28px, 6vw, 36px);
     margin-right: 10px;
   }
   header form {
@@ -45,7 +45,7 @@ a {
   header form input {
     max-width: 210px;
     padding: 1px 8px;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 2.6vw, 1rem);
     font-family: "Suwannaphum", serif;
     border: none;
     border-radius: 3px;
@@ -61,8 +61,8 @@ a {
   }
   header .settings-icon {
     margin-left: auto;
-    width: 28px;
-    height: 28px;
+    width: clamp(28px, 6vw, 32px);
+    height: clamp(28px, 6vw, 32px);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -70,17 +70,17 @@ a {
     padding: 22px 6vw;
   }
   header .logo {
-    width: 36px;
-    height: 36px;
+    width: clamp(36px, 5vw, 48px);
+    height: clamp(36px, 5vw, 48px);
     margin-right: 20px;
   }
   header form input {
     max-width: 250px;
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
   }
   header .settings-icon {
-    width: 32px;
-    height: 32px;
+    width: clamp(32px, 4vw, 36px);
+    height: clamp(32px, 4vw, 36px);
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -92,14 +92,9 @@ a {
     max-width: 1000px;
     margin: 0 auto;
   }
-  header .logo {
-    width: 48px;
-    height: 48px;
-  }
   header form input {
     max-width: 350px;
     padding: 5px 12px;
-    font-size: 1.2rem;
   }
   header .quick-links {
     display: block;
@@ -112,10 +107,6 @@ a {
   header .quick-links ul li {
     margin-right: 65px;
   }
-  header .settings-icon {
-    width: 36px;
-    height: 36px;
-  }
 }
 @media only screen and (min-width: 1440px) {
   header > div {
@@ -124,6 +115,7 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
+    display: none;
     padding: 20px 14px 60px;
   }
   #current-upcoming-weather .current-weather {
@@ -132,14 +124,14 @@ a {
   #current-upcoming-weather .current-weather .time-location {
     width: fit-content;
     margin-left: auto;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 4.2vw, 2rem);
     text-align: right;
   }
   #current-upcoming-weather .current-weather .time-location p:first-child {
     margin-bottom: -10px;
   }
   #current-upcoming-weather .current-weather .time-location span {
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 2.4vw, 1rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) {
     width: 100%;
@@ -154,23 +146,23 @@ a {
   #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp img {
     position: absolute;
     top: -18px;
-    left: -70px;
-    width: 76px;
-    height: 76px;
+    right: clamp(110px, 24.8vw, 180px);
+    width: clamp(76px, 15.4vw, 112px);
+    height: clamp(76px, 15.4vw, 112px);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 {
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.4vw, 1.6rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 span {
-    font-size: 4.5rem;
+    font-size: clamp(4.5rem, 15vw, 7rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: -30px;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
+    margin-bottom: 25px;
+    font-size: clamp(0.8rem, 2.8vw, 1.2rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:first-child {
     flex: 1 1 100%;
@@ -179,21 +171,21 @@ a {
     margin-right: 20px;
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions {
-    max-width: 200px;
+    max-width: clamp(250px, 51vw, 400px);
     margin: -10px auto 0;
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul {
     display: flex;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 2.8vw, 1rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li {
     flex-basis: 33.3333333333%;
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li img {
     margin-bottom: -12px;
-    width: 20px;
-    height: 20px;
+    width: clamp(20px, 4.4vw, 28px);
+    height: clamp(20px, 4.4vw, 28px);
   }
   #current-upcoming-weather .upcoming-weather {
     max-width: 593px;
@@ -274,9 +266,6 @@ a {
   #current-upcoming-weather .current-weather {
     margin-bottom: 60px;
   }
-  #current-upcoming-weather .current-weather .time-location {
-    font-size: 2rem;
-  }
   #current-upcoming-weather .current-weather .time-location p:first-child {
     margin-bottom: -15px;
   }
@@ -286,21 +275,8 @@ a {
   #current-upcoming-weather > div:first-child > div:nth-child(2) {
     margin-top: 0;
   }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp img {
-    top: -20px;
-    left: -110px;
-    width: 112px;
-    height: 112px;
-  }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 {
-    font-size: 1.6rem;
-  }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 span {
-    font-size: 7rem;
-  }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
-    margin-bottom: 40px;
-    font-size: 1.2rem;
+    margin-bottom: 50px;
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details p:first-child {
     margin-bottom: 10px;
@@ -309,14 +285,7 @@ a {
     margin-right: 50px;
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions {
-    max-width: 275px;
-  }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul {
-    font-size: 1rem;
-  }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .weather-conditions ul li img {
-    width: 28px;
-    height: 28px;
+    max-width: 400px;
   }
   #current-upcoming-weather .upcoming-weather {
     max-width: 800px;
@@ -454,11 +423,11 @@ a {
   #daily-weather .current-stats {
     margin-bottom: 35px;
     display: flex;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 4.2vw, 2rem);
   }
   #daily-weather .current-stats .current-temp p:first-child {
     margin-bottom: -10px;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
   }
   #daily-weather .current-stats .time-location {
     width: fit-content;
@@ -469,7 +438,7 @@ a {
     margin-bottom: -10px;
   }
   #daily-weather .current-stats .time-location span {
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 2.4vw, 1rem);
   }
   #daily-weather .daily-weather {
     margin: 0 auto;
@@ -477,7 +446,7 @@ a {
   }
   #daily-weather .daily-weather h2 {
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: clamp(1rem, 3.6vw, 1.75rem);
     font-weight: 400;
   }
   #daily-weather .daily-weather .hourly-weather-container .split-daily:last-child > .hourly-weather:last-child {
@@ -490,7 +459,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 17px 0;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
   }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li {
     display: flex;
@@ -500,11 +469,11 @@ a {
     margin-right: 5px;
   }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather img {
-    width: 16px;
-    height: 16px;
+    width: clamp(16px, 3.6vw, 24px);
+    height: clamp(16px, 3.6vw, 24px);
   }
   #daily-weather .daily-weather .hourly-weather-container .hourly-weather .am-pm {
-    font-size: 0.6rem;
+    font-size: clamp(0.6rem, 2.2vw, 0.8rem);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -513,34 +482,18 @@ a {
   }
   #daily-weather .current-stats {
     margin-bottom: 100px;
-    font-size: 2rem;
-  }
-  #daily-weather .current-stats .current-temp p:first-child {
-    font-size: 1.2rem;
   }
   #daily-weather .current-stats .time-location p:first-child {
     margin-bottom: -15px;
-  }
-  #daily-weather .current-stats .time-location span {
-    font-size: 1rem;
   }
   #daily-weather .daily-weather {
     max-width: clamp(594px, 89vw, 1000px);
   }
   #daily-weather .daily-weather h2 {
     margin-bottom: 20px;
-    font-size: 1.75rem;
   }
-  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul {
+  #daily-weather .daily-weather .hourly-weather-container > .hourly-weather ul {
     padding: 17px 0;
-    font-size: 1.2rem;
-  }
-  #daily-weather .daily-weather .hourly-weather-container .hourly-weather img {
-    width: 24px;
-    height: 24px;
-  }
-  #daily-weather .daily-weather .hourly-weather-container .hourly-weather .am-pm {
-    font-size: 0.8rem;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -574,17 +527,16 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
-    display: none;
     padding: 20px 30px 60px;
   }
   #next-5-days-weather .current-stats {
     margin-bottom: 35px;
     display: flex;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 4.2vw, 2rem);
   }
   #next-5-days-weather .current-stats .current-temp p:first-child {
     margin-bottom: -10px;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
   }
   #next-5-days-weather .current-stats .time-location {
     width: fit-content;
@@ -595,7 +547,7 @@ a {
     margin-bottom: -10px;
   }
   #next-5-days-weather .current-stats .time-location span {
-    font-size: 0.75rem;
+    font-size: clamp(0.75rem, 2.4vw, 1rem);
   }
   #next-5-days-weather .next-5-days-weather {
     margin: 0 auto;
@@ -603,7 +555,7 @@ a {
   }
   #next-5-days-weather .next-5-days-weather h2 {
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: clamp(1rem, 3.6vw, 1.75rem);
     font-weight: 400;
   }
   #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather {
@@ -616,7 +568,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 17px 0;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
   }
   #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li {
     display: flex;
@@ -626,8 +578,8 @@ a {
     margin-right: 5px;
   }
   #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img {
-    width: 16px;
-    height: 16px;
+    width: clamp(16px, 3.6vw, 24px);
+    height: clamp(16px, 3.6vw, 24px);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -636,31 +588,18 @@ a {
   }
   #next-5-days-weather .current-stats {
     margin-bottom: 100px;
-    font-size: 2rem;
-  }
-  #next-5-days-weather .current-stats .current-temp p:first-child {
-    font-size: 1.2rem;
   }
   #next-5-days-weather .current-stats .time-location p:first-child {
     margin-bottom: -15px;
-  }
-  #next-5-days-weather .current-stats .time-location span {
-    font-size: 1rem;
   }
   #next-5-days-weather .next-5-days-weather {
     max-width: clamp(594px, 89vw, 1000px);
   }
   #next-5-days-weather .next-5-days-weather h2 {
     margin-bottom: 20px;
-    font-size: 1.75rem;
   }
-  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul {
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container > .day-weather ul {
     padding: 17px 0;
-    font-size: 1.2rem;
-  }
-  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img {
-    width: 24px;
-    height: 24px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -721,8 +660,8 @@ a {
     background-color: #1379D7;
   }
   footer img {
-    width: 24px;
-    height: 24px;
+    width: clamp(24px, 5vw, 36px);
+    height: clamp(24px, 5vw, 36px);
     margin-bottom: -8px;
   }
   footer #active-tab {
@@ -733,10 +672,6 @@ a {
   footer {
     padding: 10px 0 6px;
     font-size: 1rem;
-  }
-  footer img {
-    width: 36px;
-    height: 36px;
   }
 }
 @media only screen and (min-width: 1024px) {

@@ -37,8 +37,8 @@ a {
     }
 
     .logo {
-      width: 28px;
-      height: 28px;
+      width: clamp(28px, 6vw, 36px);
+      height: clamp(28px, 6vw, 36px);
       margin-right: 10px;
     }
 
@@ -49,7 +49,7 @@ a {
       input {
         max-width: 210px;
         padding: 1px 8px;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 2.6vw, 1rem);
         font-family: 'Suwannaphum', serif;
         border: none;
         border-radius: 3px;
@@ -67,8 +67,8 @@ a {
 
     .settings-icon {
       margin-left: auto;
-      width: 28px;
-      height: 28px;
+      width: clamp(28px, 6vw,32px);
+      height: clamp(28px, 6vw, 32px);
     }
   }
 }
@@ -77,21 +77,21 @@ a {
     padding: 22px 6vw;
 
     .logo {
-      width: 36px;
-      height: 36px;
+      width: clamp(36px, 5vw, 48px);
+      height: clamp(36px, 5vw, 48px);
       margin-right: 20px;
     }
 
     form {
       input {
         max-width: 250px;
-        font-size: 1rem;
+        font-size: clamp(1rem, 2vw, 1.2rem);
       }
     }
 
     .settings-icon {
-      width: 32px;
-      height: 32px;
+      width: clamp(32px, 4vw, 36px);
+      height: clamp(32px, 4vw, 36px);
     }
   }
 }
@@ -105,16 +105,10 @@ a {
       margin: 0 auto;
     }
 
-    .logo {
-      width: 48px;
-      height: 48px;
-    }
-
     form {
       input {
         max-width: 350px;
         padding: 5px 12px;
-        font-size: 1.2rem;
       }
     }
 
@@ -130,11 +124,6 @@ a {
           margin-right: 65px;
         }
       }
-    }
-
-    .settings-icon {
-      width: 36px;
-      height: 36px;
     }
   }
 }
@@ -156,7 +145,7 @@ a {
 
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
-    // display: none;
+    display: none;
     padding: 20px 14px 60px;
 
     .current-weather {
@@ -165,11 +154,11 @@ a {
       .time-location {
         width: fit-content;
         margin-left: auto;
-        font-size: 1.2rem;
+        font-size: clamp(1.2rem, 4.2vw, 2rem);
         text-align: right;
         
         p:first-child { margin-bottom: -10px; }
-        span { font-size: 0.75rem; }
+        span { font-size: clamp(0.75rem, 2.4vw, 1rem); }
       }
     }
     
@@ -186,15 +175,15 @@ a {
         img {
           position: absolute;
           top: -18px;
-          left: -70px;
-          width: 76px;
-          height: 76px;
+          right: clamp(110px, 24.8vw, 180px);
+          width: clamp(76px, 15.4vw, 112px);
+          height: clamp(76px, 15.4vw, 112px);
         }
 
         h2 {
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 3.4vw, 1.6rem);
 
-          span { font-size: 4.5rem; }
+          span { font-size: clamp(4.5rem, 15vw, 7rem); }
         }
       }
 
@@ -203,30 +192,30 @@ a {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: -30px;
-        margin-bottom: 10px;
-        font-size: 0.8rem;
+        margin-bottom: 25px;
+        font-size: clamp(0.8rem, 2.8vw, 1.2rem);
 
         p:first-child { flex: 1 1 100%; }
         p:nth-child(2) { margin-right: 20px; }
       }
 
       .weather-conditions {
-        max-width: 200px;
+        max-width: clamp(250px, 51vw, 400px);
         margin: -10px auto 0;
 
         ul {
           display: flex;
           justify-content: center;
           
-          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 2.8vw, 1rem);
           
           li {
             flex-basis: calc(100% / 3);
             
             img {
               margin-bottom: -12px;
-              width: 20px;
-              height: 20px;
+              width: clamp(20px, 4.4vw, 28px);
+              height: clamp(20px, 4.4vw, 28px);
             }
           }
         }
@@ -318,8 +307,6 @@ a {
       margin-bottom: 60px;
 
       .time-location {
-        font-size: 2rem;
-        
         p:first-child { margin-bottom: -15px; }
         span { font-size: 1rem; }
       }
@@ -328,42 +315,14 @@ a {
     > div:first-child > div:nth-child(2) {
       margin-top: 0;
 
-      .current-temp {
-        img {
-          top: -20px;
-          left: -110px;
-          width: 112px;
-          height: 112px;
-        }
-
-        h2 {
-          font-size: 1.6rem;
-          span { font-size: 7rem; }
-        }
-      }
-
       .temp-details {
-        margin-bottom: 40px;
-        font-size: 1.2rem;
+        margin-bottom: 50px;
 
         p:first-child { margin-bottom: 10px; }
         p:nth-child(2) { margin-right: 50px; }
       }
 
-      .weather-conditions {
-        max-width: 275px;
-
-        ul {
-          font-size: 1rem;
-          
-          li {
-            img {
-              width: 28px;
-              height: 28px;
-            }
-          }
-        }
-      }
+      .weather-conditions { max-width: 400px; }
     }
 
     .upcoming-weather {
@@ -513,13 +472,13 @@ a {
     .current-stats {
       margin-bottom: 35px;
       display: flex;
-      font-size: 1.2rem;
+      font-size: clamp(1.2rem, 4.2vw, 2rem);
 
 
       .current-temp {
         p:first-child {
           margin-bottom: -10px;
-          font-size: 0.9rem;
+          font-size: clamp(0.9rem, 3vw, 1.2rem);
         }
       }
 
@@ -529,7 +488,7 @@ a {
         text-align: right;
         
         p:first-child { margin-bottom: -10px; }
-        span { font-size: 0.75rem; }
+        span { font-size: clamp(0.75rem, 2.4vw, 1rem); }
       }
     }
 
@@ -539,7 +498,7 @@ a {
 
       h2 {
         margin-bottom: 10px;
-        font-size: 1rem;
+        font-size: clamp(1rem, 3.6vw, 1.75rem);
         font-weight: 400;
       }
 
@@ -553,7 +512,7 @@ a {
             display: flex;
             justify-content: space-between;
             padding: 17px 0;
-            font-size: 0.8rem;
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
             
             li {
               display: flex;
@@ -564,11 +523,11 @@ a {
           }
 
           img {
-            width: 16px;
-            height: 16px;
+            width: clamp(16px, 3.6vw, 24px);
+            height: clamp(16px, 3.6vw, 24px);
           }
 
-          .am-pm { font-size: 0.6rem; }
+          .am-pm { font-size: clamp(0.6rem, 2.2vw, 0.8rem); }
         }
       }
     }
@@ -576,48 +535,23 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #daily-weather {
-    // display: none;
     padding: 40px 75px 100px;
 
     .current-stats {
       margin-bottom: 100px;
-      font-size: 2rem;
-
-
-      .current-temp {
-        p:first-child {
-          font-size: 1.2rem;
-        }
-      }
 
       .time-location {
         p:first-child { margin-bottom: -15px; }
-        span { font-size: 1rem; }
       }
     }
 
     .daily-weather {
       max-width: clamp(594px, 89vw, 1000px);
 
-      h2 {
-        margin-bottom: 20px;
-        font-size: 1.75rem;
-      }
+      h2 { margin-bottom: 20px; }
 
-      .hourly-weather-container {
-        .hourly-weather {
-          ul {
-            padding: 17px 0;
-            font-size: 1.2rem;
-          }
-
-          img {
-            width: 24px;
-            height: 24px;
-          }
-
-          .am-pm { font-size: 0.8rem; }
-        }
+      .hourly-weather-container > .hourly-weather {
+        ul { padding: 17px 0; }
       }
     }
   }
@@ -658,19 +592,19 @@ a {
 // *********************
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
-    display: none;
+    // display: none;
     padding: 20px 30px 60px;
 
     .current-stats {
       margin-bottom: 35px;
       display: flex;
-      font-size: 1.2rem;
+      font-size: clamp(1.2rem, 4.2vw, 2rem);
 
 
       .current-temp {
         p:first-child {
           margin-bottom: -10px;
-          font-size: 0.9rem;
+          font-size: clamp(0.9rem, 3vw, 1.2rem);
         }
       }
 
@@ -680,7 +614,7 @@ a {
         text-align: right;
         
         p:first-child { margin-bottom: -10px; }
-        span { font-size: 0.75rem; }
+        span { font-size: clamp(0.75rem, 2.4vw, 1rem); }
       }
     }
 
@@ -690,7 +624,7 @@ a {
 
       h2 {
         margin-bottom: 10px;
-        font-size: 1rem;
+        font-size: clamp(1rem, 3.6vw, 1.75rem);
         font-weight: 400;
       }
 
@@ -703,7 +637,7 @@ a {
             display: flex;
             justify-content: space-between;
             padding: 17px 0;
-            font-size: 0.8rem;
+            font-size: clamp(0.8rem, 3vw, 1.2rem);
             
             li {
               display: flex;
@@ -714,8 +648,8 @@ a {
           }
 
           img {
-            width: 16px;
-            height: 16px;
+            width: clamp(16px, 3.6vw, 24px);
+            height: clamp(16px, 3.6vw, 24px);
           }
         }
       }
@@ -724,46 +658,23 @@ a {
 }
 @media only screen and (min-width: 768px) {
   #next-5-days-weather {
-    // display: none;
     padding: 40px 75px 100px;
 
     .current-stats {
       margin-bottom: 100px;
-      font-size: 2rem;
-
-
-      .current-temp {
-        p:first-child {
-          font-size: 1.2rem;
-        }
-      }
 
       .time-location {
         p:first-child { margin-bottom: -15px; }
-        span { font-size: 1rem; }
       }
     }
 
     .next-5-days-weather {
       max-width: clamp(594px, 89vw, 1000px);
 
-      h2 {
-        margin-bottom: 20px;
-        font-size: 1.75rem;
-      }
+      h2 { margin-bottom: 20px; }
 
-      .next-5-days-weather-container {
-        .day-weather {
-          ul {
-            padding: 17px 0;
-            font-size: 1.2rem;
-          }
-
-          img {
-            width: 24px;
-            height: 24px;
-          }
-        }
+      .next-5-days-weather-container > .day-weather {
+        ul { padding: 17px 0; }
       }
     }
   }
@@ -828,8 +739,8 @@ a {
     background-color: $primary;
 
     img {
-      width: 24px;
-      height: 24px;
+      width: clamp(24px, 5vw, 36px);
+      height: clamp(24px, 5vw, 36px);
       margin-bottom: -8px;
     }
 
@@ -842,11 +753,6 @@ a {
   footer {
     padding: 10px 0 6px;
     font-size: 1rem;
-
-    img {
-      width: 36px;
-      height: 36px;
-    }
   }
 }
 @media only screen and (min-width: 1024px) {
