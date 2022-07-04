@@ -122,6 +122,7 @@ a {
 }
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
+    display: none;
     padding: 20px 14px 60px;
   }
   #current-upcoming-weather .current-weather {
@@ -204,6 +205,7 @@ a {
   #current-upcoming-weather .upcoming-weather h2 {
     margin-bottom: 10px;
     font-size: 0.9rem;
+    font-weight: 400;
     text-align: center;
   }
   #current-upcoming-weather .upcoming-weather > div {
@@ -427,13 +429,216 @@ a {
 @media only screen and (min-width: 0px) {
   #daily-weather {
     display: none;
-    padding-bottom: 60px;
+    padding: 20px 30px 60px;
+  }
+  #daily-weather .current-stats {
+    margin-bottom: 35px;
+    display: flex;
+    font-size: 1.2rem;
+  }
+  #daily-weather .current-stats .current-temp p:first-child {
+    margin-bottom: -10px;
+    font-size: 0.9rem;
+  }
+  #daily-weather .current-stats .time-location {
+    width: fit-content;
+    margin-left: auto;
+    text-align: right;
+  }
+  #daily-weather .current-stats .time-location p:first-child {
+    margin-bottom: -10px;
+  }
+  #daily-weather .current-stats .time-location span {
+    font-size: 0.75rem;
+  }
+  #daily-weather .daily-weather {
+    margin: 0 auto;
+    max-width: clamp(260px, 79.5vw, 594px);
+  }
+  #daily-weather .daily-weather h2 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather {
+    border-bottom: 1px solid #BABABA;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather:last-child {
+    border-bottom: none;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0;
+    font-size: 0.8rem;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li {
+    display: flex;
+    align-items: center;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul li img {
+    margin-right: 5px;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather img {
+    width: 16px;
+    height: 16px;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather .am-pm {
+    font-size: 0.6rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #daily-weather {
+    padding: 40px 75px 100px;
+  }
+  #daily-weather .current-stats {
+    margin-bottom: 100px;
+    font-size: 2rem;
+  }
+  #daily-weather .current-stats .current-temp p:first-child {
+    font-size: 1.2rem;
+  }
+  #daily-weather .current-stats .time-location p:first-child {
+    margin-bottom: -15px;
+  }
+  #daily-weather .current-stats .time-location span {
+    font-size: 1rem;
+  }
+  #daily-weather .daily-weather {
+    max-width: clamp(594px, 89vw, 1000px);
+  }
+  #daily-weather .daily-weather h2 {
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather ul {
+    padding: 17px 0;
+    font-size: 1.2rem;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather img {
+    width: 24px;
+    height: 24px;
+  }
+  #daily-weather .daily-weather .hourly-weather-container .hourly-weather .am-pm {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #daily-weather {
+    display: block;
+    margin-bottom: 120px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #daily-weather .current-stats {
+    display: none;
+  }
+  #daily-weather .daily-weather {
+    max-width: clamp(1000px, 99vw, 1440px);
   }
 }
 @media only screen and (min-width: 0px) {
   #next-5-days-weather {
+    padding: 20px 30px 60px;
+  }
+  #next-5-days-weather .current-stats {
+    margin-bottom: 35px;
+    display: flex;
+    font-size: 1.2rem;
+  }
+  #next-5-days-weather .current-stats .current-temp p:first-child {
+    margin-bottom: -10px;
+    font-size: 0.9rem;
+  }
+  #next-5-days-weather .current-stats .time-location {
+    width: fit-content;
+    margin-left: auto;
+    text-align: right;
+  }
+  #next-5-days-weather .current-stats .time-location p:first-child {
+    margin-bottom: -10px;
+  }
+  #next-5-days-weather .current-stats .time-location span {
+    font-size: 0.75rem;
+  }
+  #next-5-days-weather .next-5-days-weather {
+    margin: 0 auto;
+    max-width: clamp(260px, 79.5vw, 594px);
+  }
+  #next-5-days-weather .next-5-days-weather h2 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather {
+    border-bottom: 1px solid #BABABA;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather:last-child {
+    border-bottom: none;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0;
+    font-size: 0.8rem;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li {
+    display: flex;
+    align-items: center;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul li img {
+    margin-right: 5px;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #next-5-days-weather {
+    padding: 40px 75px 100px;
+  }
+  #next-5-days-weather .current-stats {
+    margin-bottom: 100px;
+    font-size: 2rem;
+  }
+  #next-5-days-weather .current-stats .current-temp p:first-child {
+    font-size: 1.2rem;
+  }
+  #next-5-days-weather .current-stats .time-location p:first-child {
+    margin-bottom: -15px;
+  }
+  #next-5-days-weather .current-stats .time-location span {
+    font-size: 1rem;
+  }
+  #next-5-days-weather .next-5-days-weather {
+    max-width: clamp(594px, 89vw, 1000px);
+  }
+  #next-5-days-weather .next-5-days-weather h2 {
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather ul {
+    padding: 17px 0;
+    font-size: 1.2rem;
+  }
+  #next-5-days-weather .next-5-days-weather .next-5-days-weather-container .day-weather img {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #next-5-days-weather {
+    display: block;
+    margin-bottom: 120px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #next-5-days-weather .current-stats {
     display: none;
-    padding-bottom: 60px;
+  }
+  #next-5-days-weather .next-5-days-weather {
+    max-width: clamp(1000px, 99vw, 1440px);
   }
 }
 @media only screen and (min-width: 0px) {
