@@ -61,8 +61,8 @@ a {
   }
   header .settings-icon {
     margin-left: auto;
-    width: clamp(28px, 6vw, 32px);
-    height: clamp(28px, 6vw, 32px);
+    width: clamp(20px, 4.6vw, 28px);
+    height: clamp(20px, 4.6vw, 28px);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -150,9 +150,9 @@ a {
     height: clamp(76px, 15.4vw, 112px);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 {
-    font-size: clamp(0.8rem, 3.4vw, 1.6rem);
+    font-size: clamp(1rem, 3.4vw, 1.6rem);
   }
-  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 span {
+  #current-upcoming-weather > div:first-child > div:nth-child(2) .current-temp h2 .temp {
     font-size: clamp(4.5rem, 15vw, 7rem);
   }
   #current-upcoming-weather > div:first-child > div:nth-child(2) .temp-details {
