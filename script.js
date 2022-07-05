@@ -1,3 +1,28 @@
+const weatherIcons = {
+  clear: {
+    light: './img/weather-sunny-light.png',
+    dark: './img/weather-sunny-dark.png',
+  },
+  clouds: {
+    light: './img/weather-partly-cloudy-light.png',
+    dark: './img/weather-partly-cloudy-dark.png',
+  },
+  conditions: {
+    wind: {
+      light: './img/weather-windy-light.png',
+      dark: './img/weather-windy-dark.png',
+    },
+    humidity: {
+      light: './img/water-outline-light.png',
+      dark: './img/water-outline-dark.png',
+    },
+    rain: {
+      light: './img/umbrella-outline-light.png',
+      dark: './img/umbrella-outline-dark.png',
+    }
+  }
+};
+
 (function footerTabListener() {
   const sections = document.querySelectorAll('section');
   const viewTabs = [...document.querySelectorAll('footer div')];
@@ -72,7 +97,6 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
   // })();
 
   (function getUpcomingWeather() {
-    // get every 3 hours
     const upcomingContainers = [...document.querySelectorAll('.upcoming-container')];
     const upcomingWeatherData = [res.list[0], res.list[1], res.list[2]];
 
@@ -92,18 +116,60 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
       }
 
       tempP.textContent = Math.round(weatherData.temp);
-      windP.textContent = `${Math.round(weatherData.wind.speed)} MPH`;
+      windP.textContent = `${convertDegreesToDirection(weatherData.wind.deg)} ${Math.round(weatherData.wind.speed)} MPH`;
       rainP.textContent = `${Math.round(weatherData.rain)}%`;
       humidityP.textContent = `${Math.round(weatherData.humidity)}%`;
       timeP.innerHTML = `<span>${weatherData.time}<span>${weatherData.time.split(':')[0] < '12:00' ? 'AM' : 'PM'}`;
     });
   })();
 
+  (function getNext24Hours() {
+    const next24HoursData = res.list.slice(0, 8);
+    const hourlyWeatherContainer = document.querySelector('.hourly-weather-container');
+    const splitContainers = [...document.querySelectorAll('.split-daily')];
+    let splitContainerIndex = 0;
+
+    next24HoursData.forEach((data, i) => {
+      const hourlyWeather = document.createElement('div');
+      const ul = document.createElement('ul');
+      const weatherData = {
+        time: data.dt_txt.split(' ')[1].split(':').splice(0, 2).join(':'),
+        temp: `${Math.round(data.main.temp)}`,
+        rain: `${data.pop}%`,
+        wind: `${convertDegreesToDirection(data.wind.deg)} ${Math.round(data.wind.speed)} MPH`,
+        weather: data.weather[0].main
+      }
+
+      hourlyWeather.classList.add('hourly-weather');
+
+      Object.values(weatherData).forEach((value, i) => {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        const p = document.createElement('p');
+
+        if (weatherIcons.conditions[Object.keys(weatherData)[i]]) {
+          img.src = weatherIcons.conditions[Object.keys(weatherData)[i]].dark;
+          li.appendChild(img);
+        }
+
+        if (Object.keys(weatherData)[i] === 'weather') {
+          console.log(value);
+          img.src = weatherIcons[weatherData.weather.toLowerCase()].dark;
+          li.appendChild(img);
+        } else {
+          p.textContent = value;
+          li.appendChild(p);
+        }
+
+        ul.appendChild(li);
+      });
+
+      hourlyWeather.appendChild(ul);
+      if (splitContainerIndex === 0 && i >= 4) splitContainerIndex = 1;
+
+      splitContainers[splitContainerIndex].appendChild(hourlyWeather);
+    });
+  })();
+
   console.log(res)
 });
-
-
-// 0 - 24.9 && 335 - 360 = E 
-// 25 - 
-//
-//
