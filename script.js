@@ -49,53 +49,81 @@ const weatherIcons = {
   });
 })();
 
+function convertDegreesToDirection(deg) {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  let convertedDeg = deg * 8 / 360;
+  convertedDeg = Math.round(convertedDeg, 0);
+  convertedDeg = (convertedDeg + 8) % 8;
+
+  return directions[convertedDeg];
+}
+
+window.addEventListener('resize', () => {
+  const currentUpcomingWeatherContainer = document.querySelector('#current-upcoming-weather');
+  
+  if (document.documentElement.clientWidth >= '1024') {
+    currentUpcomingWeatherContainer.style.display = 'flex';
+  } else {
+    currentUpcomingWeatherContainer.style.display = 'block';
+  }
+});
+
 let city = 'Houston';
+
+(function getTimeLocation() {
+  const timeP = document.querySelector('.time-location .time');
+  const cityStateP = document.querySelector('.time-location .location');
+  
+  const date = new Date();
+  let currentTime = date.toLocaleTimeString().split(':').splice(0, 2).join(':');
+  let amPM = date.toLocaleTimeString().split(':').splice(2, 3).join(' ').split(' ')[1];
+  timeP.textContent = `${currentTime} ${amPM}`;
+  cityStateP.textContent = `${city}`;
+}());
+
+function convertTime(time) {
+  const timey = String(new Date(time*1000)).split(' ')[4].split(':').slice(0, 2);
+  const extractedTime = String(new Date(time*1000)).split(' ')[4].split(':').slice(0, 2);
+  let amPM;
+
+  amPM = extractedTime[0] < 12 ? 'AM' : 'PM';
+
+  if (extractedTime[0] > 12) extractedTime[0] = extractedTime[0] - 12;
+  if (extractedTime == ['00', '00']) extractedTime[0] = ['12'];
+
+  return `<span>${extractedTime.join(':')}</span>${amPM}`;
+}
+
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid={APIkey}`, { mode: 'cors' })
+.then((res) => res.json())
+.then((res) => {
+  (function getCurrentTemp() {
+    const currentTempH2 = document.querySelector('.current-temp .temp');
+    const [feelsLikeP, highP, lowP] = [...document.querySelectorAll('.temp-details .temp')];
+    const windLi = document.querySelector('.weather-conditions p');
+
+    const currentTemp = {
+      temp: Math.round(res.main.temp),
+      feelsLike: Math.round(res.main.feels_like),
+      high: Math.round(res.main.temp_max),
+      low: Math.round(res.main.temp_min),
+      humidity: `${res.main.humidity}%`,
+      weather: res.weather[0].main
+    }
+
+    currentTempH2.textContent = currentTemp.temp;
+    feelsLikeP.textContent = currentTemp.feelsLike;
+    highP.textContent = currentTemp.high;
+    lowP.textContent = currentTemp.low;
+
+    windLi.textContent = `${convertDegreesToDirection(res.wind.deg)} ${Math.round(res.wind.speed)} MPH`;
+  })();
+});
 
 fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid={APIkey}`, { mode: 'cors' })
 .then((res) => res.json())
 .then((res) => {
-  function convertDegreesToDirection(deg) {
-    const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-    let convertedDeg = deg * 8 / 360;
-    convertedDeg = Math.round(convertedDeg, 0);
-    convertedDeg = (convertedDeg + 8) % 8;
-
-    return directions[convertedDeg];
-  }
-
-  (function getTimeLocation() {
-    const timeP = document.querySelector('.time-location .time');
-    const cityStateP = document.querySelector('.time-location .location');
-    
-    const date = new Date();
-    let currentTime = date.toLocaleTimeString().split(':').splice(0, 2).join(':');
-    let amPM = date.toLocaleTimeString().split(':').splice(2, 3).join(' ').split(' ')[1];
-    timeP.textContent = `${currentTime} ${amPM}`;
-    cityStateP.textContent = `${city}, XX`;
-  }());
-
-  // (function getCurrentTemp() {
-  //   const currentTempH2 = document.querySelector('.current-temp .temp');
-  //   const [feelsLikeP, highP, lowP] = [...document.querySelectorAll('.temp-details .temp')];
-  //   const windLi = document.querySelector('.weather-conditions p');
-
-  //   const currentTemp = {
-  //     temp: Math.round(res.main.temp),
-  //     feelsLike: Math.round(res.main.feels_like),
-  //     high: Math.round(res.main.temp_max),
-  //     low: Math.round(res.main.temp_min),
-  //     humidity: `${res.main.humidity}%`,
-  //     weather: res.weather[0].main
-  //   }
-
-  //   currentTempH2.textContent = currentTemp.temp;
-  //   feelsLikeP.textContent = currentTemp.feelsLike;
-  //   highP.textContent = currentTemp.high;
-  //   lowP.textContent = currentTemp.low;
-
-  //   windLi.textContent = `${convertDegreesToDirection(res.wind.deg)} ${Math.round(res.wind.speed)} MPH`;
-  // })();
-
   (function getUpcomingWeather() {
     const upcomingContainers = [...document.querySelectorAll('.upcoming-container')];
     const upcomingWeatherData = [res.list[0], res.list[1], res.list[2]];
@@ -112,20 +140,19 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
         wind: upcomingWeatherData[i].wind,
         rain: upcomingWeatherData[i].pop,
         humidity: upcomingWeatherData[i].main.humidity,
-        time: upcomingWeatherData[i].dt_txt.split(' ')[1].split(':').splice(0, 2).join(':')
+        time: upcomingWeatherData[i].dt 
       }
 
       tempP.textContent = Math.round(weatherData.temp);
       windP.textContent = `${convertDegreesToDirection(weatherData.wind.deg)} ${Math.round(weatherData.wind.speed)} MPH`;
       rainP.textContent = `${Math.round(weatherData.rain)}%`;
       humidityP.textContent = `${Math.round(weatherData.humidity)}%`;
-      timeP.innerHTML = `<span>${weatherData.time}<span>${weatherData.time.split(':')[0] < '12:00' ? 'AM' : 'PM'}`;
+      timeP.innerHTML = convertTime(weatherData.time);
     });
   })();
 
   (function getNext24Hours() {
     const next24HoursData = res.list.slice(0, 8);
-    const hourlyWeatherContainer = document.querySelector('.hourly-weather-container');
     const splitContainers = [...document.querySelectorAll('.split-daily')];
     let splitContainerIndex = 0;
 
@@ -133,8 +160,8 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
       const hourlyWeather = document.createElement('div');
       const ul = document.createElement('ul');
       const weatherData = {
-        time: data.dt_txt.split(' ')[1].split(':').splice(0, 2).join(':'),
-        temp: `${Math.round(data.main.temp)}`,
+        time: data.dt,
+        temp: `${Math.round(data.main.temp)}&deg;F`,
         rain: `${data.pop}%`,
         wind: `${convertDegreesToDirection(data.wind.deg)} ${Math.round(data.wind.speed)} MPH`,
         weather: data.weather[0].main
@@ -153,11 +180,13 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
         }
 
         if (Object.keys(weatherData)[i] === 'weather') {
-          console.log(value);
           img.src = weatherIcons[weatherData.weather.toLowerCase()].dark;
           li.appendChild(img);
+        } else if (Object.keys(weatherData)[i] === 'time') {
+          p.innerHTML = convertTime(value); 
+          li.appendChild(p);
         } else {
-          p.textContent = value;
+          p.innerHTML = value;
           li.appendChild(p);
         }
 
@@ -170,6 +199,4 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial
       splitContainers[splitContainerIndex].appendChild(hourlyWeather);
     });
   })();
-
-  console.log(res)
 });
