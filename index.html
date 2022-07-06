@@ -16,8 +16,8 @@
       <div>
         <img src="./img/weather-sunny-light.png" alt="logo" class="logo">
         <form action="#">
-          <input type="text" placeholder="enter city or zip code">
-          <img src="./img/magnify.png" alt="search-icon">
+          <input type="text" placeholder="enter city or zip code" id="user-input">
+          <img src="./img/magnify.png" alt="search-icon" id="search-btn">
         </form>
         <div class="quick-links">
           <ul>
@@ -169,8 +169,8 @@
             <p><span>98</span>&deg;F</p>
           </div>
           <div class="time-location">
-            <p class="time">12:00<span>AM</span></p>
-            <p class="location">Houston, TX</p>
+            <p class="time">12:01<span>AM</span></p>
+            <p class="location">Houston</p>
           </div>
         </div>
 
@@ -310,6 +310,9 @@
           </div>
         </div>
       </section> -->
+      <div id="error-container" class="hidden">
+        <p>Error, invalid city name</p>
+      </div>
     </main>
 
     <footer>

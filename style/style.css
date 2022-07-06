@@ -17,6 +17,20 @@ a {
   text-decoration: none;
 }
 
+#error-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+#error-container p {
+  margin-top: 50%;
+}
+
 .hidden {
   display: none;
 }
@@ -113,6 +127,10 @@ a {
     max-width: clamp(1000px, 63.5vw, 1440px);
   }
 }
+main {
+  position: relative;
+}
+
 @media only screen and (min-width: 0px) {
   #current-upcoming-weather {
     padding: 20px 14px 60px;
