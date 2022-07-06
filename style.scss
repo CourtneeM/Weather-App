@@ -230,7 +230,7 @@ a {
 
       h2 {
         margin-bottom: 10px;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 3.6vw, 1.5rem);
         font-weight: 400;
         text-align: center;
       }
@@ -269,14 +269,14 @@ a {
             height: 20px;
           }
 
-          p { font-size: 1.2rem; }
+          p { font-size: clamp(1.2rem, 4.4vw, 1.5rem); }
         }
 
         li {
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 0.6rem;
+          font-size: clamp(0.6rem, 2.4vw, 1rem);
         
           img {
             width: 16px;
@@ -288,9 +288,9 @@ a {
 
       .time {
         p {
-          font-size: 0.6rem;
+          font-size: clamp(0.6rem, 3.4vw, 0.8rem);
 
-          span { font-size: 1rem; }
+          span { font-size: clamp(1rem, 3.4vw, 1.5rem); }
         }
       }
 
@@ -307,9 +307,8 @@ a {
 
       .time-location {
         p:first-child { margin-bottom: -15px; }
-        span { font-size: 1rem; }
       }
-    } 
+    }
 
     > div:first-child > div:nth-child(2) {
       margin-top: 0;
@@ -329,10 +328,7 @@ a {
       margin-top: 0;
       padding: 25px 10px;
 
-      h2 {
-        margin-bottom: 36px;
-        font-size: 1.5rem;
-      }
+      h2 { margin-bottom: 36px; }
 
       > div {
         display: flex;
@@ -348,13 +344,9 @@ a {
             width: 36px;
             height: 36px;
           }
-
-          p { font-size: 2.5rem; }
         }
 
         li {
-          font-size: 1rem;
-        
           img {
             width: 20px;
             height: 20px;
@@ -363,11 +355,7 @@ a {
       }
 
       .time {
-        p {
-          font-size: 0.8rem;
-
-          span { font-size: 1.5rem; }
-        }
+        p > span { font-size: 1.5rem; }
       }
     }
   }
